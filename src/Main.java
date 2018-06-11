@@ -1,11 +1,12 @@
 import java.util.*;
 
-public class Main {
+public class Main  {
 
     private int numberOfPeople;
 
     Scanner scan = new Scanner(System.in);
     Scanner scan1 = new Scanner(System.in);
+
 
     String [] name;
     List <String> names;
@@ -97,14 +98,22 @@ public class Main {
 //        return setToReturn;
 
     public void firstToLast(){
-        names.sort((o1, o2) -> o2.compareTo(o1));
+        names.sort(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                if(o1.length() < o2.length()) {
+                    return -1;
+                }
+                else if(o1.length() > o2.length()) {
+                    return 1;
+                }
+                else {
+                    return 0;
+                }
+            }
+        });
         System.out.println("Sorted names: ");
-        for (String s:names){
-            System.out.println(s);
-        }
         System.out.println(".....................................\n");
-
-
 
     }
 
@@ -130,6 +139,4 @@ public class Main {
         return setToReturn;
 
     }
-
-
 }
