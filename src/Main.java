@@ -97,7 +97,7 @@ public class Main {
 //        return setToReturn;
 
     public void firstToLast(){
-        names.sort(String::compareTo);
+        names.sort((o1, o2) -> o2.compareTo(o1));
         System.out.println("Sorted names: ");
         for (String s:names){
             System.out.println(s);
