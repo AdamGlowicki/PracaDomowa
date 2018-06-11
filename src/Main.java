@@ -22,9 +22,11 @@ public class Main {
         int numberOfNames = scan.nextInt();
         this.newTab(numberOfNames);
         this.writteName();
-        this.longestName();
-        this.shortestName();
+//        this.longestName();
+//        this.shortestName();
         this.addtoList();
+        firstToLast();
+        longestAndShortest();
         //this.findDuplicates(names);
         this.findDuplicates();
 
@@ -48,31 +50,32 @@ public class Main {
         for (String x:name){
             System.out.println(x);
         }
+        System.out.println(".....................................\n");
     }
 
-    public void longestName(){
-        int maxName = 0;
-        String longestName = null;
-        for (String n:name){
-            if (n.length()>maxName){
-                maxName = n.length();
-                longestName = n;
-            }
-
-        }
-        System.out.println("The longest name: " + longestName);
-    }
-
-    public void shortestName(){
-        String shortesName = name[0];
-        for (String n:name){
-            if ((n.compareTo(shortesName)<0)){
-                shortesName = n;
-            }
-        }
-        System.out.println("Shortest name: " + shortesName);
-    }
-
+//    public void longestName(){
+//        int maxName = 0;
+//        String longestName = null;
+//        for (String n:name){
+//            if (n.length()>maxName){
+//                maxName = n.length();
+//                longestName = n;
+//            }
+//
+//        }
+//        System.out.println("The longest name: " + longestName);
+//    }
+//
+//    public void shortestName(){
+//        String shortesName = name[0];
+//        for (String n:name){
+//            if ((n.compareTo(shortesName)<0)){
+//                shortesName = n;
+//            }
+//        }
+//        System.out.println("Shortest name: " + shortesName);
+//    }
+//
     public void addtoList(){
         names = new ArrayList<>();
         for (String n:name){
@@ -92,6 +95,27 @@ public class Main {
 //        }
 //        System.out.println(setToReturn);
 //        return setToReturn;
+
+    public void firstToLast(){
+        names.sort(String::compareTo);
+        System.out.println("Sorted names: ");
+        for (String s:names){
+            System.out.println(s);
+        }
+        System.out.println(".....................................\n");
+
+
+
+    }
+
+    public void longestAndShortest(){
+        System.out.println("Shotest names: " + names.get(0));
+        System.out.println("Longest name: " + names.get(names.size()-1));
+        System.out.println(".....................................\n");
+        System.out.println("");
+
+
+    }
 
         public Set<String> findDuplicates (){
         Set<String> setToReturn = new HashSet<>();
