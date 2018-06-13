@@ -25,22 +25,24 @@ public class FirsMission {
                 ".................................................................\n" +
                 "If you want to see length list enter: length");
         String task = scanSwitch.nextLine();
-        switch (task){
-            case "add":
-                addToList();
-                break;
-            case "print":
-                printList();
-                break;
-            case "short_long":
-                shortLong();
-                break;
-            case "duplicate":
-                numberOfDuplicate();
-                break;
-            case "length":
-                lengthList();
-        }
+
+            switch (task) {
+                case "add":
+                    addToList();
+                    break;
+                case "print":
+                    printList();
+                    break;
+                case "short_long":
+                    shortLong();
+                    break;
+                case "duplicate":
+                    numberOfDuplicate();
+                    break;
+                case "length":
+                    lengthList();
+
+            }
     }
 
 
@@ -51,9 +53,9 @@ public class FirsMission {
             String element = scanStr.nextLine();
             if (!element.equals("break")){
                names.add(element);
-                System.out.println("Enter next name or 'break'");
+                System.out.println("Enter next name or enter: menu ");
             }
-            if (element.equals("break")){
+            if (element.equals("menu")){
                 break;
             }
 
@@ -88,18 +90,25 @@ public class FirsMission {
         });
         System.out.println("short: " + names.get(0));
         System.out.println("long: " + names.get(names.size()-1));
-    }
-    private List<String> duplicates(){
-        final Set<String > duplikat = new HashSet<>();
-        final List<String> repeat = new ArrayList<>();
-
-        for (String s:names){
-            if (!duplikat.add(s))
-                repeat.add(s);
+        System.out.println("\n");
+        System.out.println("Enter: menu");
+        String menu = scanStr.nextLine();
+        if (menu.equals("menu")){
+            task();
         }
-        System.out.println(repeat);
-        return repeat;
     }
+
+//    private List<String> duplicates(){                             nieużywana metoda znajdowania duplikatów
+//        final Set<String > duplikat = new HashSet<>();
+//        final List<String> repeat = new ArrayList<>();
+//
+//        for (String s:names){
+//            if (!duplikat.add(s))
+//                repeat.add(s);
+//        }
+//        System.out.println(repeat);
+//        return repeat;
+//    }
 
     private void numberOfDuplicate(){
         List<String> repleacementList = new ArrayList<>();
@@ -109,7 +118,7 @@ public class FirsMission {
 
         repleacementList.sort(String::compareTo);
 
-//        for (String s:repleacementList){
+//        for (String s:repleacementList){                        pokazuje czy wszystkie imiona dodały sie posortowane do zastepczekj listy
 //            System.out.println(s);
 //        }
 
