@@ -16,8 +16,8 @@ public class SecondMission {
 
     public void inti(){
         this.switchToChar(name);
-        this.isCheck(name);
         duplicates();
+        this.isCheck(name);
         print();
     }
 
@@ -33,7 +33,7 @@ public class SecondMission {
     }
 
     private boolean isCheck(String name){
-        if (repeat==null){
+        if (repeat.isEmpty()){
             return false;
         }
         else
@@ -47,6 +47,8 @@ public class SecondMission {
             if (!duplikat.add(s))
                 repeat.add(s);
         }
+//        System.out.println("Lista duplikat " + duplikat);
+//        System.out.println("Lista repeat " + repeat);
         return repeat;
     }
 

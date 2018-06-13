@@ -5,7 +5,7 @@ public class Main {
 
         FirsMission mission = new FirsMission();
         // mission.init();
-        SecondMission second = new SecondMission("Ewa");
+        SecondMission second = new SecondMission("Hjakoqw");
         second.inti();
     }
 
