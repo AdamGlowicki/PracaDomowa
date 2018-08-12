@@ -9,5 +9,6 @@ public interface UserRepositroyDao {
     User getById(Integer id);
     User getByLogin(String login);
     User getName(String name);
-    List<User> getuserList();
+    List<User> getUserList();
+
 }

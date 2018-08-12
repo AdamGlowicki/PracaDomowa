@@ -7,7 +7,7 @@ import java.util.List;
 
 public class UserRepositoryDaoBin implements UserRepositroyDao {
     public void addUser(User user) {
-
+        getUserList().add(user);
     }
 
     public User getById(Integer id) {
@@ -38,7 +38,7 @@ public class UserRepositoryDaoBin implements UserRepositroyDao {
         return null;
     }
 
-    public List<User> getuserList() {
-        return null;
+    public List<User> getUserList() {
+        return UserRepository.getRepository();
     }
 }
